@@ -8,4 +8,4 @@ public enum BuildStatus {
     FAILED,
     TIMEOUT,
     CANCELLED
-}
+}                           

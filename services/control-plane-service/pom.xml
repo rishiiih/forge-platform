@@ -91,7 +91,7 @@
     <artifactId>spring-boot-maven-plugin</artifactId>
     <configuration>
         <jvmArguments>-Duser.timezone=Asia/Kolkata</jvmArguments>
-    </configuration>
+    </configuration>    
 </plugin>
         </plugins>
     </build>
