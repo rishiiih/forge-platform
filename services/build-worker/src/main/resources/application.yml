@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: build-worker
+
+  datasource:
+    url: jdbc:postgresql://localhost:55432/forge
+    username: forge
+    password: forge_local_password
+    hikari:
+      connection-init-sql: SET TIME ZONE 'Asia/Kolkata'
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: forge-build-workers
+      auto-offset-reset: earliest
+      enable-auto-commit: false
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      ack-mode: record
+
+logging:
+  level:
+    com.forge.worker: INFO
