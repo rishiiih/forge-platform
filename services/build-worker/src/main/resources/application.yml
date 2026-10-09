@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: build-worker
@@ -11,15 +12,18 @@ spring:
 
   kafka:
     bootstrap-servers: localhost:29092
+
     consumer:
       group-id: forge-build-workers
       auto-offset-reset: earliest
       enable-auto-commit: false
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
     listener:
       ack-mode: record
 
 logging:
   level:
     com.forge.worker: INFO
+    org.springframework.kafka.listener: INFO
